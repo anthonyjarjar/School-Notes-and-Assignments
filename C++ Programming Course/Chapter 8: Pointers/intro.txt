@@ -1,0 +1,30 @@
+Variables have an adress in memory, for example:
+
+int Var {22}
+
+has an adress at 1008 so int* p_var would equal to 1008
+
+
+
+Stack VS Heap
+
+
+
+Stack: 
+
+Memory is finite 
+
+The developer isnt in full control of the memory lifetime i.e. not controlled when the variable 
+is wiped off the memory
+
+lifetime is controlled by the scope mechanism 
+
+
+
+Heap:
+
+Memory is fininte 
+
+developer is in full control of when memory is allocated and when it is released 
+
+lifetime is controled explicitly through new and delete opertators

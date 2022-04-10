@@ -1,0 +1,9 @@
+Watch and follow through all of this 
+
+https://www.youtube.com/watch?v=8jLOx1hD3_o
+
+use flag:
+
+-std=c++17
+
+Left off (timestamp): Chapter 11 15:00:52
