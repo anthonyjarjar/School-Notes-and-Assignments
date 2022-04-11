@@ -31,10 +31,10 @@ int main() {
    int *pNumber2{new int {23}}; // dumb down syntax ---  int *Pointer{Make memory with address and store{number}}
 
    std::cout << std::endl;
-   std::cout << "pNumber2: " << pNumber2 << std::endl;
-   std::cout << "pNumber2: " << *pNumber2 << std::endl;
+   std::cout << "pNumber2: " << pNumber2 << std::endl; // outputs memory address
+   std::cout << "pNumber2: " << *pNumber2 << std::endl; // outputs 23
 
-    delete pNumber2;
+    delete pNumber2; 
     pNumber2 = nullptr;
 
     return 0;
