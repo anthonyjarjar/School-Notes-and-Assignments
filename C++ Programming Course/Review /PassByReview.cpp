@@ -34,7 +34,7 @@ int main() {
     workTwo(x); // x is now manpiulated and it's value is 11 
 
     // pass by pointer 
-    workThree(&x) // you need to pass the address of the variable or pass in a pointer, now x = 12
+    workThree(&x); // you need to pass the address of the variable or pass in a pointer, now x = 12
 
     return 0;
 }
