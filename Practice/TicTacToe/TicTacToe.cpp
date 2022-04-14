@@ -80,7 +80,7 @@ class Game {
         }
 
 
-        void userInput(){
+        void playGame(){
             while(true){
                 
                 char inputX = 'X';
@@ -113,7 +113,7 @@ int main() {
 
     Game tictactoe = Game();
 
-    tictactoe.userInput();
+    tictactoe.playGame();
 
     return 0;
 }
