@@ -8,3 +8,5 @@ int main() {
 
     return 0;
 }
+
+// g++ -o myprogram file.cpp file2.cpp
