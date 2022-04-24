@@ -11,7 +11,7 @@ class Game {
                 for(int i{}; i < 3; ++i){
                     std::cout << arr[j][i];
                 }
-                std::cout << std::endl;
+                std::cout << std::endl; 
             }
             std::cout << std::endl;
         }
