@@ -61,21 +61,29 @@ class CardGame {
 
             for(int i; i < 3; ++i){
                 int houseDeal = i + (rand() % (52 - i));
-                int playerDeal = i + (rand() % (52 - i));
-
+                
                 dealer.push_back(shuffled[houseDeal]);
+
+                std::swap(shuffled[houseDeal], shuffled.back());
+                shuffled.pop_back();
+                
+            }
+
+            for(int i; i < 3; ++i){
+                int playerDeal = i + (rand() % (52 - i));
+                
                 currentHand.push_back(shuffled[playerDeal]);
+
+                std::swap(shuffled[playerDeal], shuffled.back());
+                shuffled.pop_back();
             }
         
             for(std::string cards : dealer){
-                
-                if((dealer[k] == dealer[k + 1]) || (dealer[k] == currentHand[k]) || (dealer[k] == currentHand[k + 1])){
-                    dealer[k] = shuffled[rand() % 51 + 0];
+                if(dealer[0] == dealer[k]){
+                    std::cout << "Hidden Card" << std::endl;
                 }else{
-                    dealer[k] = dealer[k];
+                    std::cout << dealer[k] << std::endl;
                 }
-
-                std::cout << dealer[k] << std::endl;
                 ++k;
             }
 
@@ -83,12 +91,6 @@ class CardGame {
             k = 0;
 
             for(std::string cards : currentHand){
-                if((currentHand[k] == currentHand[k + 1]) || (currentHand[k] == dealer[k]) || (currentHand[k] == dealer[k + 1])){
-                    currentHand[k] = shuffled[rand() % 51 + 0];
-                }else{
-                    currentHand[k] = currentHand[k];
-                }
-
                 std::cout << currentHand[k] << std::endl;
                 ++k;
             }
