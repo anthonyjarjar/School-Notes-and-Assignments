@@ -1,9 +1,8 @@
 #include <iostream>
-#include <algorithm>
+#include <cstdlib>
 #include <string>
 #include <vector>
 #include <random>
-#include <cstdlib>
 
 class Deck {
     private:
