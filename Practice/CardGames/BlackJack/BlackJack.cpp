@@ -14,7 +14,7 @@ class Deck {
         std::vector <std::string> Deck;
 
     public:
-        std::vector <std::string> cardDeck(){
+        std::vector <std::string> cardDeck(){ 
             std::vector <std::string> Deck;
 
             for(int i{0}; i < 4; i++){
@@ -154,6 +154,12 @@ class CardGame {
             }else if(scoreKeeper(player) == 21){
                 std::cout << std::endl << "The house says: 'Nice job'\n";
             }else if(scoreKeeper(house) > scoreKeeper(player)){
+                int k = 0;
+
+                for(std::string cards : dealer){
+                    std::cout << dealer[k] << std::endl;
+                    ++k;
+                }
                 std::cout << "The house has a score of " << scoreKeeper(house) << " they win! \n";
             }else if(scoreKeeper(player) == scoreKeeper(house)){
                 std::cout << "It's a standoff" << std::endl;
@@ -191,12 +197,8 @@ class CardGame {
                 std::cout << "House wins! \n";
             }else if(scoreKeeper(house) > 21 && scoreKeeper(player) > 21){
                 std::cout << "Both of you busted \n";
-            }else if(scoreKeeper(player) > 21 && scoreKeeper(house) < 21){
-                std::cout << "Player busted, House wins! \n";
             }else if(scoreKeeper(house) > 21 && scoreKeeper(player) < 21){
                 std::cout << "House busted, Player wins! \n";
-            }else if(scoreKeeper(player) > scoreKeeper(house)){
-                std::cout << "PLayer wins! Haha you such house! \n";
             }else{
                 std::cout << std::endl;
             }
@@ -225,7 +227,8 @@ class CardGame {
                 std::swap(shuffled[playerDeal], shuffled.back());
                 shuffled.pop_back();
             }
-        
+
+            std::cout << "Dealer's Hand" << std::endl;
             for(std::string cards : dealer){
                 if(dealer[0] == dealer[k]){
                     std::cout << "Hidden Card" << std::endl;
@@ -239,14 +242,15 @@ class CardGame {
 
             k = 0;
 
+            std::cout << "Player's hand" << std::endl;
             for(std::string cards : currentHand){
                 std::cout << currentHand[k] << std::endl;
                 ++k;
             }
 
-            std::cout << "Player total: "<< std::endl << scoreKeeper(currentHand) << std::endl;
+            std::cout << "\nPlayer total: "<< std::endl << scoreKeeper(currentHand) << std::endl;
 
-            std::cout << "Now for the rounds to commence \n" << std::endl;
+            std::cout << "\nNow for the rounds to commence \n" << std::endl;
 
             housePlay(shuffled, dealer, currentHand);
         }
